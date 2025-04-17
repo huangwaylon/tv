@@ -9,7 +9,7 @@ browser.runtime.onInstalled.addListener(() => {
   browser.storage.local.get('enabled')
     .then(result => {
       if (result.enabled === undefined) {
-        return browser.storage.local.set({ enabled: false });
+        return browser.storage.local.set({ enabled: true });
       }
     })
     .catch(error => {
