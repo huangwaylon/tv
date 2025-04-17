@@ -305,6 +305,10 @@ class TVerSubtitleExtractor {
     this.subtitleOverlay.style.opacity = '1';
     this.subtitleOverlay.style.display = 'block';
     
+    // Ensure font size is properly set
+    const isFullscreen = this.isVideoFullscreen();
+    this.subtitleOverlay.style.fontSize = isFullscreen ? '48px' : '28px';
+    
     this.requestPositionUpdate();
   }
 
@@ -329,7 +333,8 @@ class TVerSubtitleExtractor {
       left: `${position.left}px`,
       bottom: `${position.bottom}px`,
       transform: 'translateX(-50%)',
-      maxWidth: isFullscreen ? '80vw' : '80%'
+      maxWidth: isFullscreen ? '80vw' : '80%',
+      fontSize: isFullscreen ? '48px' : '28px'
     });
     
     if (this.currentSubtitleText && this.enabled) {
@@ -475,10 +480,12 @@ class TVerSubtitleExtractor {
         }
         
         this.subtitleOverlay.style.zIndex = '9999999';
+        this.subtitleOverlay.style.fontSize = '48px';
       } else {
         if (document.body && !document.body.contains(this.subtitleOverlay)) {
           document.body.appendChild(this.subtitleOverlay);
           this.subtitleOverlay.style.zIndex = '9999';
+          this.subtitleOverlay.style.fontSize = '28px';
         }
       }
       

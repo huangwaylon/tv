@@ -11,7 +11,7 @@
   color: white;
   padding: 8px 16px;
   border-radius: 4px;
-  font-size: 20px;
+  font-size: 28px;
   text-align: center;
   user-select: text;
   pointer-events: auto;
@@ -35,7 +35,7 @@
 :fullscreen .tver-subtitle-overlay,
 :-webkit-full-screen .tver-subtitle-overlay,
 :-moz-full-screen .tver-subtitle-overlay {
-  font-size: 24px;
+  font-size: 48px;
   padding: 10px 20px;
   bottom: 80px !important;
   z-index: 9999999 !important;
